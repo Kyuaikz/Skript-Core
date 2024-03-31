@@ -1,0 +1,14 @@
+# use skript reflect for importing java tasks while using skript
+
+# 001
+
+
+import:
+  org.bukkit.event.player.PlayerInteractEvent
+  org.bukkit.event.block.Action
+ 
+on PlayerInteractEvent:
+  if event.getAction() is Action.RIGHT_CLICK_BLOCK:
+    if event.getMaterial().toString().contains("_AXE"):
+      if event.getClickedBlock().getType().toString().toUpperCase() contains "WOOD":
+        cancel event
